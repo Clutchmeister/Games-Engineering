@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using WindowsGame1.Rendering;
-using WindowsGame1.Physics;
+using RIPXNAGame.Rendering;
+using RIPXNAGame.Physics;
 using Microsoft.Xna.Framework;
 
-namespace WindowsGame1
+namespace RIPXNAGame
 {
     public abstract class GameObject : IComponentContainer
     {
@@ -21,14 +21,11 @@ namespace WindowsGame1
         private Vector3 mMaxVelocity;
         private Vector3 mMaxRotation;
 
-        /// <summary>
-        /// GameObject unique name
-        /// </summary>
+
+        // GameObject unique name
+
         private String mName = null;
 
-        /// <summary>
-        /// Ctor
-        /// </summary>
         /// <param name="pTokenName">Token Name</param>
         /// <param name="pWorldPosition">Initial World Position</param>
         protected GameObject(String pTokenName, Vector3 pWorldPosition)
@@ -38,75 +35,56 @@ namespace WindowsGame1
             Position = pWorldPosition;
         }
 
-        /// <summary>
-        /// Name of the Game Object
-        /// </summary>
+        // Name of the Game Object
+
         public String Name
         {
             get { return mName; }
             private set { mName = value; }
         }
-        /// <summary>
-        /// World position of the Game Object
-        /// </summary>
+
+        // World position of the Game Object
+
         public virtual Vector3 Position
         {
             get { return mWorldPosition; }
             set { mWorldPosition = value; }
         }
-        /// <summary>
-        /// Orientation of the Game Object
-        /// </summary>
+
+        // Orientation of the Game Object
+
         public Vector3 Orientation
         {
             get { return mOrientation; }
             set { mOrientation = value; mOrientation.Normalize(); }
         }
-        /// <summary>
-        /// Velocity : how fast game object position is changing
-        /// </summary>
+
+        /// Velocity : The speed at which the object is moving
+        
         public Vector3 Velocity
         {
             get { return mVelocity; }
             set { mVelocity = value; }
         }
         /// <summary>
-        /// Velocity : how fast game object position is changing
+        /// Acceleration : The rate at which the object is speeding up
         /// </summary>
         public Vector3 Acceleration
         {
             get { return mAceleration; }
             set { mAceleration = value; }
         }
-        /// <summary>
-        /// Max Velocity : how fast game object position is changing
-        /// </summary>
+
+        // Max Velocity : The maximum speed the object can reach
+ 
         public Vector3 MaxVelocity
         {
             get { return mMaxVelocity; }
             set { mMaxVelocity = value; }
         }
-        /// <summary>
-        /// Angular velocity : how fast game object orientation is changing
-        /// </summary>
-        public Quaternion Rotation
-        {
-            get { return mRotation; }
-            set { mRotation = value; }
-        }
 
-        /// <summary>
-        /// Max Angular velocity : how fast game object orientation is changing
-        /// </summary>
-        public Vector3 MaxRotation
-        {
-            get { return mMaxRotation; }
-            set { mMaxRotation = value; }
-        }
+        // Set Game Object Position
 
-        /// <summary>
-        /// Set Game Object Position
-        /// </summary>
         /// <param name="pX">X coordinate</param>
         /// <param name="pY">Y coordinate</param>
         /// <param name="pZ">Z coordinate</param>
@@ -117,9 +95,9 @@ namespace WindowsGame1
             mWorldPosition.Z = pZ;
         }
         #region Component Management
-        /// <summary>
-        /// Inject component
-        /// </summary>
+
+        // Inject component
+
         /// <param name="pType">Component Type</param>
         /// <param name="pComponentToAdd">Component to Inject</param>
         public void Inject(ComponentType pType, IGameObjectComponent pComponentToAdd)
@@ -131,47 +109,42 @@ namespace WindowsGame1
             }
         }
 
-        /// <summary>
-        /// Eject a component
-        /// </summary>
+
+        // Eject a component
+
         /// <param name="pType">Component Type to Eject</param>
         public virtual void Eject(ComponentType pType)
         {
             mComponentSet.Remove(pType);
         }
 
-        /// <summary>
-        /// Get if object is Renderable
-        /// </summary>
-        /// <returns></returns>
+  
+        // Get if object is Renderable
+
         public bool IsRenderable()
         {
-            return mComponentSet.ContainsKey(ComponentType.GRAPHICS);
+            return mComponentSet.ContainsKey(ComponentType.GRAPH);
         }
 
-        /// <summary>
-        /// Get if object has a physical body
-        /// </summary>
-        /// <returns></returns>
+        // Get if object has a physical body
+
         public bool HasAPhysicalBody()
         {
-            return mComponentSet.ContainsKey(ComponentType.PHYSICS);
+            return mComponentSet.ContainsKey(ComponentType.PHYS);
         }
-
-        // IRenderableObject yet to be implemented
 
 
         internal IRenderableObject GetGraphicComponent()
         {
             IGameObjectComponent graphic = null;
-            mComponentSet.TryGetValue(ComponentType.GRAPHICS, out graphic);
+            mComponentSet.TryGetValue(ComponentType.GRAPH, out graphic);
             return (IRenderableObject)graphic;
         }
 
         internal PhysicalBody GetPhysicsComponent()
         {
             IGameObjectComponent phys = null;
-            mComponentSet.TryGetValue(ComponentType.PHYSICS, out phys);
+            mComponentSet.TryGetValue(ComponentType.PHYS, out phys);
             return (PhysicalBody)phys;
         }
 
@@ -197,9 +170,9 @@ namespace WindowsGame1
         }
 
         #endregion
-        /// <summary>
-        /// Get Object dimension
-        /// </summary>
+
+        // Get Object dimension
+  
         public abstract Dimension Type { get; }
     }
 }

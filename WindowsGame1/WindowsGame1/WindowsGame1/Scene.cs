@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using WindowsGame1;
-using WindowsGame1.Rendering;
-using WindowsGame1.Systems;
+using RIPXNAGame;
+using RIPXNAGame.Rendering;
+using RIPXNAGame.Systems;
 
 
-namespace WindowsGame1
+namespace RIPXNAGame
 {
     internal class Scene : IScene
     {
@@ -36,9 +36,9 @@ namespace WindowsGame1
         }
 
 
-        /// <summary>
-        /// Place an object to a given position
-        /// </summary>
+
+        // Place an object at a desired location
+
         /// <param name="pGameObject">Game Object</param>
         /// <param name="pPosition">Position</param>
         public virtual void Place(GameObject pGameObject, Vector3 pPosition)

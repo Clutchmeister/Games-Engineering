@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WindowsGame1.Utility
+namespace RIPXNAGame.Utility
 {
     abstract class ListSceneRepresentation<T> : ISceneRepresentationTrait<T>
     {
@@ -19,11 +19,15 @@ namespace WindowsGame1.Utility
 
         public virtual void AddToScene(T pElement)
         {
+            // If pElement is not null and mList does not contain pElement then add
+
             if (pElement != null && !mList.Contains(pElement))
             {
                 mList.Add(pElement);
             }
         }
+
+        // Remove pElement from list and therefore scene
 
         public virtual void RemoveFromScene(T pElement)
         {

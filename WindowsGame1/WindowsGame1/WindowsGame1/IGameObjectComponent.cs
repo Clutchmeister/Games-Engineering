@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 
-namespace WindowsGame1
+namespace RIPXNAGame
 {
     public interface IGameObjectComponent
     {
@@ -11,12 +11,12 @@ namespace WindowsGame1
         /// <param name="pGameObject">Name of Object you wish to intialise</param>
         void OnBind(GameObject pGameObject);
     }
-    /* #PILL# Enum Type */
+    /* Enumerator to define type. Used to address dynamic typing requirement. May be replaced by serialisation through later edits. */
     public enum ComponentType
     {
-        GRAPHICS,
-        PHYSICS,
+        GRAPH,
+        PHYS,
         AI,
-        ANIMATION
+        ANIM
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WindowsGame1
+namespace RIPXNAGame
 {
     public interface IComponentContainer
     {
@@ -15,9 +15,9 @@ namespace WindowsGame1
         /// <param name="pComponentToAdd">Component to Inject</param>
         void Inject(ComponentType pType, IGameObjectComponent pComponentToAdd);
 
-        /// <summary>
-        /// Eject a Component from the container
-        /// </summary>
+
+        // Eject a Component within the container
+
         /// <param name="pType">Type of the component to eject I.E. AI</param>
         void Eject(ComponentType pType);
     }

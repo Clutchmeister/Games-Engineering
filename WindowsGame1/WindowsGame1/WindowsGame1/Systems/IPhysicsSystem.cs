@@ -1,14 +1,10 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 
-namespace WindowsGame1.Systems
+namespace RIPXNAGame.Systems
 {
     interface IPhysicsSystem : IEngineSystem
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="pGameTime"></param>
         void Update(ref GameTime pGameTime);
     }
 }

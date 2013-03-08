@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace WindowsGame1
+namespace RIPXNAGame
 {
   public abstract class GenericAsset {
 

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsGame1", "WindowsGame1\WindowsGame1\WindowsGame1.csproj", "{1D9A245E-2008-4AED-ACC5-EF6DBE896A9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RIPXNAGame", "WindowsGame1\WindowsGame1\RIPXNAGame.csproj", "{1D9A245E-2008-4AED-ACC5-EF6DBE896A9C}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "WindowsGame1Content", "WindowsGame1\WindowsGame1Content\WindowsGame1Content.contentproj", "{E8F638D9-15DD-4C1A-9E5D-676C1F4A9722}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsGame1Content", "WindowsGame1\WindowsGame1Content\WindowsGame1Content.contentproj", "{E8F638D9-15DD-4C1A-9E5D-676C1F4A9722}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

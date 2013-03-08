@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WindowsGame1
+namespace RIPXNAGame
 {
     public interface ISceneListener
     {
 
-        // Reacts to "object placed event"
+        // Reacts when object is placed in screen
 
         /// <param name="pPlacedObject">Placed object</param>
         void OnPlacedObject(GameObject pPlacedObject);
 
-        // Reacts to "Object removed event"
+        // Reacts when object is removed
 
         /// <param name="pPlacedObject">Removed object</param>
         void OnRemovedObject(GameObject pPlacedObject);

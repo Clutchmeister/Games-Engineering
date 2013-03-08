@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using Microsoft.Xna.Framework;
 
-namespace WindowsGame1
+namespace RIPXNAGame
 {
     public abstract class X2DToken : GameObject
     {
@@ -15,9 +15,9 @@ namespace WindowsGame1
         }
 
         public override Dimension Type { get { return Dimension.X2D; } }
-        /// <summary>
-        /// Initialize Token Default Properties
-        /// </summary>
+
+        // Initialize Token Default Properties
+
         private void InjectComponents()
         {
             MainEngine.getInstance().RenderingSystem.Assemble(this);

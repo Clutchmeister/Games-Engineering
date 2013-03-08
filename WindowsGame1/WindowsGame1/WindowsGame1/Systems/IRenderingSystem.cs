@@ -1,25 +1,25 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using WindowsGame1.Rendering;
+using RIPXNAGame.Rendering;
 
-namespace WindowsGame1.Systems
+namespace RIPXNAGame.Systems
 {
     /// <summary>
     /// Class responsible for rendering on screen
     /// </summary>
     interface IRenderingSystem : IEngineSystem
     {
-        /// <summary>
-        /// Initializa the Renderer
-        /// </summary>
+ 
+        // Initialize the Renderer
+  
         /// <param name="pDevice">DeviceManager to modify window and device attributes</param>
         void Init(GraphicsDeviceManager pDevice, IResourceManager pResourceManager);
 
-        /// <summary>
-        /// Render the scene
-        /// </summary>
-        /// <param name="pSimTime">Time structure</param>
+
+        // Render the scene
+
+ 
         void Render(ref GameTime pGameTime);
         void SetCamera(ICamera pCamera);
 

@@ -1,40 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using WindowsGame1.Resource;
 
-namespace WindowsGame1
+namespace RIPXNAGame
 {
-    class AssetLib
-    { 
+    
     // A library of asset
 
-    public class AssetLibrary {
+    public class AssetLib {
 
         // Asset map : key String id
 
         IDictionary<String, GenericAsset> mAssetMap;
         
-        protected AssetLibrary() {
+        protected AssetLib() {
             mAssetMap = new Dictionary<String, GenericAsset>();
         }
 
         // Create an empty asset library
 
         /// <returns>Empty asset library</returns>
-        public static AssetLibrary CreateAnEmptyLibrary() {
-            return new AssetLibrary();
+        public static AssetLib CreateAnEmptyLibrary() {
+            return new AssetLib();
         }
 
         // Import an asset in the library
 
         /// <param name="pAsset">Asset to import</param>
         public void ImportAsset(GenericAsset pAsset) {
-            Debug.Assert(pAsset != null, "Asset to import shall not be null");
+            Debug.Assert(pAsset != null, "Cannot import a null asset dummy!");
             mAssetMap.Add(pAsset.ID, pAsset);
         }
-
-       
 
         // Get an asset by Id
 
@@ -42,12 +38,12 @@ namespace WindowsGame1
 
         public GenericAsset GetAsset(String pAssetID)
         {
-            Debug.Assert(pAssetID != null, "Asset ID shall not be null");
-            Debug.Assert(!pAssetID.Equals(""), "Asset ID shall be different from void string");
+            Debug.Assert(pAssetID != null, "There is no asset ID....How am I supposed to know what to import?!?!?!");
+            Debug.Assert(!pAssetID.Equals(""), "ID has to be different than the void string, bah...");
             GenericAsset asset;
             mAssetMap.TryGetValue(pAssetID, out asset);
             return asset;
         }
         }
-    }
 }
+

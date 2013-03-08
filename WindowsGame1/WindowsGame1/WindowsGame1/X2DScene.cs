@@ -1,34 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using WindowsGame1;
-using WindowsGame1.Rendering;
-using WindowsGame1.Systems;
+using RIPXNAGame;
+using RIPXNAGame.Rendering;
+using RIPXNAGame.Systems;
 
-// A lot of 2D stuff to be implemented
-
-namespace WindowsGame1
+namespace RIPXNAGame
 {
-    internal class X2DScene : Scene, // I2DScene-esque interface needs to to be inherited
+    internal class X2DScene : Scene, ISceneCamera
     {
         public X2DScene(int pWidth, int pHeight, int pDepth)
             : base(pWidth, pHeight, pDepth)
         {
             mSceneDimension = Dimension.X2D;
         }
-        /// <summary>
-        /// Create a 2D camera at a given position
-        /// </summary>
+
+        // Create a camera at a given position
+
         /// <param name="pCameraName">Camera name</param>
         /// <param name="pCameraPosition">Camera position</param>
         /// <returns>2D Camera</returns>
-        /*public I2DCamera CreateCameraAt(String pCameraName, Vector3 pCameraPosition)
+        public ICamera CreateCameraAt(String pCameraName, Vector3 pCameraPosition)
         {
             X2DCamera camera = CameraFactory.Create2DCamera(pCameraName);
             this.Place(camera, pCameraPosition);
             return camera;
-        }*/
-
-        // Code should look like this somewhat
+        }
     }
 }
