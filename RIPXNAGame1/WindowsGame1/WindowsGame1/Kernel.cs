@@ -19,13 +19,11 @@ namespace RIPXNAGame
 
         #region Data Members
 
-
-
         ISceneCamera mScene = null;
 
         ICamera mCamera = null;
 
-        private static Kernel mSingletonInstance = new Kernel();
+        public static Kernel mSingletonInstance = new Kernel();
 
         #endregion
 
@@ -41,7 +39,7 @@ namespace RIPXNAGame
             get { return mCamera; }
         }
 
-        public static Kernel MSingletonInstance
+        private static Kernel MSingletonInstance
         {
             get
             {
@@ -55,8 +53,8 @@ namespace RIPXNAGame
 
         #region Constructors
 
-        private Kernel()
-            : base("FishO'Rama")
+        public Kernel()
+            : base("RIPXNA")
         {
             this.IsMouseVisible = true;
         }
@@ -73,6 +71,17 @@ namespace RIPXNAGame
             AssetLib lib = AssetLib.CreateAnEmptyLibrary();             // Create a new library using AssetLib
             GameAsset A = null;                                                  // Use this to store/create visual assets
 
+            A = new GameAsset("ThatFaceVisuals", "ThatFace").UVOriginAt(155, 135).UVTopLeftCornerAt(0, 0).Width(311).Height(270);
+
+            lib.ImportAsset(A);
+
+            A = new GameAsset("PlayerVisuals", "PlayerShip").UVOriginAt(19, 21).UVTopLeftCornerAt(0, 0).Width(39).Height(43);
+
+            lib.ImportAsset(A);
+
+            A = new GameAsset("BulletVisual1", "Bullet1").UVOriginAt(1, 12).UVTopLeftCornerAt(0, 0).Width(3).Height(9);
+
+            lib.ImportAsset(A);
             return lib;
         }
 
@@ -80,24 +89,7 @@ namespace RIPXNAGame
         {
             base.LoadContent();
 
-            // Use this to instantiate/inistialise scene 
             mScene = XNAGame.CreateA2DScene(800, 600, 0); // Change these values if you want a bigger screen
-
-            // Create tokens here
-
-
-
-            // Place tokens here
-
-
-
-            Vector3 tokenPos;        // Empty Vector3, use this to define positions within the game world
-
-            tokenPos = new Vector3(0, 0, 0);            // Use this to state where you want the token to be placed
-            // mScene.Place(,);           // Use this to finally place your object in the game world
-
-
-            // Create the world camera here
 
             Vector3 camPosition = new Vector3(0, 0, 1);
 

@@ -23,6 +23,7 @@ namespace RIPXNAGame.Rendering
         public ICamera CreateCameraAt(String pCameraName, Vector3 pCameraPosition)
         {
             X2DCamera camera = CameraFactory.Create2DCamera(pCameraName);
+            camera.InitialiseEntity(pCameraName, pCameraPosition);
             this.Place(camera, pCameraPosition);
             return camera;
         }

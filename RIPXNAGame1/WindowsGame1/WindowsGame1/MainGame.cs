@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using RIPXNAGame.Entities;
 using RIPXNAGame.Resource;
 using RIPXNAGame.Physics;
 using RIPXNAGame.Rendering;
@@ -30,7 +31,12 @@ namespace RIPXNAGame
         private IAISystem mAISystem = null;
         private IRenderingSystem mRenderingSystem = null;
         private IPhysicsSystem mPhysicsSystem = null;
+        private IEntityManager mEntityManager = null;
 
+        public GamePadState gamePadState;
+        public KeyboardState keyboardState;
+
+        private Game mGame;
 
         // Singleton instance
    
@@ -41,8 +47,8 @@ namespace RIPXNAGame
             mRenderingSystem = new RenderingManager();
             mAISystem = new AISystem();
             mPhysicsSystem = new PhysicsSystem();
+            mEntityManager = new EntityManager();
         }
-
 
         // Singleton method to access the unique instance of the MainGame
 
@@ -57,23 +63,30 @@ namespace RIPXNAGame
 
         /// <param name="pDeviceManager">GraphicsDeviceManager previously associated to the Game class</param>
         /// <param name="pContentManager">Content Manager</param>
-        public void Init(GraphicsDeviceManager pDeviceManager, ContentManager pContentManager)
+        public void Init(GraphicsDeviceManager pDeviceManager, ContentManager pContentManager, Game pGame)
         {
             Debug.Assert(pDeviceManager != null, "Device Manager cannot be null");
             Debug.Assert(pContentManager != null, "Content Manager cannot be null");
 
             mResourceManager = new ResourceManager(pContentManager);
             mRenderingSystem.Init(pDeviceManager, mResourceManager);
+            mGame = pGame;
         }
 
 
         public void Update(ref GameTime pGameTime)
         {
+            HandleInput();
             mAISystem.Update(ref pGameTime);
             mPhysicsSystem.Update(ref pGameTime);
         }
 
+        private void HandleInput()
+        {
 
+            keyboardState = Keyboard.GetState();
+            gamePadState = GamePad.GetState(PlayerIndex.One);
+        }
         // Render the scene
 
         public void Render(ref GameTime pGameTime)
@@ -89,18 +102,22 @@ namespace RIPXNAGame
             mAISystem.Assemble(pScene);
             mPhysicsSystem.Assemble(pScene);
             mResourceManager.RegisterTo(pScene);
-        }
 
+
+        }
 
         /// Start a scene
 
         /// <param name="pScene">Scene To Start</param>
         public void PlayScene(IScene pScene)
         {
+            mEntityManager.Load(pScene, this);
             mResourceManager.Load(pScene);
             mAISystem.Load(pScene);
             mRenderingSystem.Load(pScene);
             mPhysicsSystem.Load(pScene);
+
+            GameObject player = mEntityManager.Create("Player");
         }
 
         public void Import(AssetLib pAssetLibrary)

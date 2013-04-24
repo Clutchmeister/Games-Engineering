@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using RIPXNAGame.Rendering;
 using RIPXNAGame.Physics;
 using Microsoft.Xna.Framework;
+using RIPXNAGame.AI;
 
 namespace RIPXNAGame
 {
@@ -11,8 +12,18 @@ namespace RIPXNAGame
 
         protected Dictionary<ComponentType, IGameObjectComponent> mComponentSet = null;
 
+        protected MainGame mGame;
+
+        private IEntityManager mEntityManager;
+
+        protected int mUID;
+
+        protected string uName;
+
         private Vector3 mWorldPosition;
         private Vector3 mOrientation;
+
+        private float mRotation;
 
         private Vector3 mVelocity;
         private Vector3 mAceleration;
@@ -22,23 +33,34 @@ namespace RIPXNAGame
 
         // GameObject unique name
 
-        private String mName = null;
-
         /// <param name="pTokenName">Token Name</param>
         /// <param name="pWorldPosition">Initial World Position</param>
-        protected GameObject(String pTokenName, Vector3 pWorldPosition)
-        {
-            mComponentSet = new Dictionary<ComponentType, IGameObjectComponent>();
-            mName = pTokenName;
-            Position = pWorldPosition;
-        }
 
+        #region Properties
         // Name of the Game Object
 
-        public String Name
+        public String UName
         {
-            get { return mName; }
-            private set { mName = value; }
+            get { return uName; }
+            set { uName = value; }
+        }
+
+        public int UID
+        {
+            get { return mUID; }
+            set { mUID = value; }
+        }
+
+        public MainGame MGame
+        {
+            get { return mGame; }
+            set { mGame = value; }
+        }
+
+        public IEntityManager EntityManager
+        {
+            get { return mEntityManager; }
+            set { mEntityManager = value; }
         }
 
         // World position of the Game Object
@@ -57,8 +79,16 @@ namespace RIPXNAGame
             set { mOrientation = value; mOrientation.Normalize(); }
         }
 
+        // Rotation of the Game Object
+
+        public float Rotation
+        {
+            get { return mRotation; }
+            set { mRotation = value; }
+        }
+
         /// Velocity : The speed at which the object is moving
-        
+
         public Vector3 Velocity
         {
             get { return mVelocity; }
@@ -74,14 +104,14 @@ namespace RIPXNAGame
         }
 
         // Max Velocity : The maximum speed the object can reach
- 
+
         public Vector3 MaxVelocity
         {
             get { return mMaxVelocity; }
             set { mMaxVelocity = value; }
         }
 
-        // Set Game Object Position
+        #endregion
 
         /// <param name="pX">X coordinate</param>
         /// <param name="pY">Y coordinate</param>
@@ -92,6 +122,19 @@ namespace RIPXNAGame
             mWorldPosition.Y = pY;
             mWorldPosition.Z = pZ;
         }
+
+        public void InitialiseEntity(string pTokenName, Vector3 pWorldPosition)
+        {
+            mComponentSet = new Dictionary<ComponentType, IGameObjectComponent>();
+            Position = pWorldPosition;
+        }
+
+        public abstract void Update(ref GameTime pGameTime);
+
+        //public abstract void ApplyPhysics(ref GameTime pGameTime);
+
+        public abstract void Initialise();
+
         #region Component Management
 
         // Inject component
@@ -116,7 +159,7 @@ namespace RIPXNAGame
             mComponentSet.Remove(pType);
         }
 
-  
+
         // Get if object is Renderable
 
         public bool IsRenderable()
@@ -139,11 +182,11 @@ namespace RIPXNAGame
             return (IRenderableObject)graphic;
         }
 
-        internal PhysicalBody GetPhysicsComponent()
+        internal PhysicsComponent GetPhysicsComponent()
         {
             IGameObjectComponent phys = null;
             mComponentSet.TryGetValue(ComponentType.PHYS, out phys);
-            return (PhysicalBody)phys;
+            return (PhysicsComponent)phys;
         }
 
         internal IAIController GetAIComponent()
@@ -170,7 +213,7 @@ namespace RIPXNAGame
         #endregion
 
         // Get Object dimension
-  
+
         public abstract Dimension Type { get; }
     }
 }

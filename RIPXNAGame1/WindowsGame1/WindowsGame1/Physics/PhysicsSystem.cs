@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using RIPXNAGame.Systems;
-using RIPXNAGame.Managers;
 
 namespace RIPXNAGame.Physics
 {
@@ -27,7 +26,7 @@ namespace RIPXNAGame.Physics
         }
         public void Assemble(GameObject pObject)
         {
-            pObject.Inject(ComponentType.PHYS, new PhysicalBody());
+            pObject.Inject(ComponentType.PHYS, new PhysicsComponent());
         }
 
         public void Load(IScene pScene)

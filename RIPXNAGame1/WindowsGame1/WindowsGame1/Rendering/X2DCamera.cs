@@ -13,7 +13,7 @@ namespace RIPXNAGame.Rendering
         private Rectangle mVisibleField;
 
         public X2DCamera(string pCameraName, Vector3 pWorldPosition)
-            : base(pCameraName, pWorldPosition)
+            : base()
         {
         }
 
@@ -23,6 +23,20 @@ namespace RIPXNAGame.Rendering
             mVisibleField = new Rectangle((int)mTopLeftCornerWorldPosition.X, (int)mTopLeftCornerWorldPosition.Y, pDevice.Viewport.Width, pDevice.Viewport.Height);
             mBatch = new SpriteBatch(mDevice);
         }
+
+        public override void Update(ref GameTime pGameTime)
+        {
+        }
+
+        public override void Initialise()
+        {
+        }
+
+        //public override void ApplyPhysics(ref GameTime pGameTime)
+        //{
+        //    throw new System.NotImplementedException();
+        //}
+
 
         public override void RenderScene()
         {
@@ -42,11 +56,11 @@ namespace RIPXNAGame.Rendering
                 {
                     //Adds a sprite to a batch of sprites for rendering using the specified 
                     // texture, position, source rectangle, color, rotation, origin, scale, effects and layer.
-                    mBatch.Draw(render2d.SpriteMap, WorldToCameraSpace(element), render2d.SourceRegion, Color.White, 0.0f, render2d.Origin, element.Scale, SpriteEffects.FlipHorizontally, 1);
+                    mBatch.Draw(render2d.SpriteMap, WorldToCameraSpace(element), render2d.SourceRegion, Color.White, Rotation, render2d.Origin, element.Scale, SpriteEffects.FlipHorizontally, 1);
                 }
                 else
                 {
-                    mBatch.Draw(render2d.SpriteMap, WorldToCameraSpace(element), render2d.SourceRegion, Color.White, 0.0f, render2d.Origin, element.Scale, SpriteEffects.None, 1);
+                    mBatch.Draw(render2d.SpriteMap, WorldToCameraSpace(element), render2d.SourceRegion, Color.White, Rotation, render2d.Origin, element.Scale, SpriteEffects.None, 1);
                 }
 
             }

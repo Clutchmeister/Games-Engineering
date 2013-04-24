@@ -16,3 +16,51 @@ F:\Programming Work\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Resolve
 F:\Programming Work\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 F:\Programming Work\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\RIPXNAGame.exe
 F:\Programming Work\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\RIPXNAGame.pdb
+A:\Downloads\Games-Engineering-Woooo\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\ResolveAssemblyReference.cache
+A:\Downloads\Games-Engineering-Woooo\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+A:\Downloads\Games-Engineering-Woooo\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\RIPXNAGame.exe
+A:\Downloads\Games-Engineering-Woooo\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\RIPXNAGame.pdb
+A:\Downloads\Games-Engineering-Woooo\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\RIPXNAGame.exe
+A:\Downloads\Games-Engineering-Woooo\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\RIPXNAGame.pdb
+A:\Downloads\Games-Engineering-Woooo\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\ThatFace.xnb
+A:\Downloads\Games-Engineering-Woooo\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\PlayerShip.xnb
+A:\Downloads\Games-Engineering-Woooo\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\Bullet1.xnb
+H:\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\ThatFace.xnb
+H:\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\PlayerShip.xnb
+H:\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\Bullet1.xnb
+H:\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\RIPXNAGame.exe
+H:\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\RIPXNAGame.pdb
+H:\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+H:\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\RIPXNAGame.exe
+H:\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\RIPXNAGame.pdb
+C:\Users\patm1_11\Desktop\work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\ThatFace.xnb
+C:\Users\patm1_11\Desktop\work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\PlayerShip.xnb
+C:\Users\patm1_11\Desktop\work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\Bullet1.xnb
+C:\Users\patm1_11\Desktop\work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\RIPXNAGame.exe
+C:\Users\patm1_11\Desktop\work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\RIPXNAGame.pdb
+C:\Users\patm1_11\Desktop\work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\patm1_11\Desktop\work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\patm1_11\Desktop\work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\RIPXNAGame.exe
+C:\Users\patm1_11\Desktop\work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\RIPXNAGame.pdb
+C:\Users\John\Desktop\Uni\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\ThatFace.xnb
+C:\Users\John\Desktop\Uni\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\PlayerShip.xnb
+C:\Users\John\Desktop\Uni\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\Bullet1.xnb
+C:\Users\John\Desktop\Uni\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\RIPXNAGame.exe
+C:\Users\John\Desktop\Uni\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\RIPXNAGame.pdb
+C:\Users\John\Desktop\Uni\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\John\Desktop\Uni\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\John\Desktop\Uni\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\RIPXNAGame.exe
+C:\Users\John\Desktop\Uni\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\RIPXNAGame.pdb
+F:\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\ThatFace.xnb
+F:\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\PlayerShip.xnb
+F:\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\Bullet1.xnb
+F:\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\RIPXNAGame.exe
+F:\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\RIPXNAGame.pdb
+F:\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\RIPXNAGame.exe
+F:\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\RIPXNAGame.pdb
+E:\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\RIPXNAGame.exe

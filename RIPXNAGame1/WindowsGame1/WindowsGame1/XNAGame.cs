@@ -20,6 +20,8 @@ namespace RIPXNAGame
         public XNAGame(String pGameName)
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferHeight = 800;
+            graphics.PreferredBackBufferWidth = 600;
             mEngine = MainGame.getInstance();
         }
 
@@ -38,7 +40,7 @@ namespace RIPXNAGame
         protected override void LoadContent()
         {
             // initialize Engine and all internal systems
-            mEngine.Init(graphics, this.Content);
+            mEngine.Init(graphics, this.Content, this);
             ImportAssets();
             base.LoadContent();
         }

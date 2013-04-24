@@ -5,19 +5,18 @@ using RIPXNAGame.Utility;
 
 namespace RIPXNAGame.Physics
 {
-    public class PhysicalBody : GameObjectComponent, IPhysicsProperties, IPhysicsActuator
+    public class PhysicsComponent : GameObjectComponent, IPhysicsProperties, IPhysicsActuator
     {
 
         private const float DEFAULT_INVERSE_MASS = 1.0f;
 
-        // f = f0 + f1 + ... + fn
         private Vector3 mForceAccumulator;
         private float mInverseMass;
-        private BoundingSphere mBoundingVolume;
+        private Rectangle mBoundingVolume; // The bounding rectangle
         private bool mIsBlockable;
         private bool mIsMovable;
 
-        public PhysicalBody()
+        public PhysicsComponent()
         {
             mInverseMass = DEFAULT_INVERSE_MASS;
         }
@@ -39,23 +38,40 @@ namespace RIPXNAGame.Physics
         {
             // update position
             SetWorldPosition(Vector3.Add(Self.Position, Vector3.Multiply(Self.Velocity, (float)pGameTime.ElapsedGameTime.TotalSeconds)));
-            // acc = F * 1/M
+            // acceleration = Force * inversemass
             Vector3 resultingacceleration = Vector3.Multiply(mForceAccumulator, mInverseMass);
             // update acceleration
             Self.Acceleration = Vector3.Add(Self.Acceleration, resultingacceleration);
-            // velocity = velocity + acc * time            
+            // velocity = velocity + acceleration * time            
             Self.Velocity = Vector3.Add(Self.Velocity, Vector3.Multiply(mForceAccumulator, (float)pGameTime.ElapsedGameTime.TotalSeconds));
             // reset force accumulator
             mForceAccumulator = Vector3.Zero;
         }
 
-        internal Contact CollideWith(PhysicalBody pOther, long pGameTime)
+        // method to record a new collision
+
+        internal RecordContact collideWith(Rectangle other, long pGameTime)
+        {
+
+            if ((mBoundingVolume.Intersects(other)))
+            {
+                return new RecordContact(pGameTime);
+            }
+            return null;
+        } 
+
+        // If there is a bounding volume, record collision
+
+         internal RecordContact CollideWith(PhysicsComponent pOther, long pGameTime)
         {
             if (mBoundingVolume == null)
                 return null;
-            return mBoundingVolume.CollideWith(pOther.mBoundingVolume, pGameTime);
+            return this.collideWith(pOther.mBoundingVolume, pGameTime);
         }
 
+    
+
+        
         public float Mass
         {
             get { return 1.0f / mInverseMass; }
@@ -67,11 +83,8 @@ namespace RIPXNAGame.Physics
                     mInverseMass = 1 / value;
             }
         }
-        public IPhysicsProperties SetCollisionRadius(float pCollisionRadius)
-        {
-            mBoundingVolume = new BoundingSphere(this, pCollisionRadius);
-            return this;
-        }
+
+   
 
         public IPhysicsProperties SetBlockable(bool pIsBlockable)
         {
@@ -85,18 +98,24 @@ namespace RIPXNAGame.Physics
             return this;
         }
 
+        // enter physical body characteristics here
+
         public bool IsBlockable()
         {
             return mIsBlockable;
         }
+
+
+        // Defines whether an object is movable or isn't (I.E. A wall)
 
         internal bool IsMovable()
         {
             return mIsMovable;
         }
 
+        // Listens for collisions so it can identify the event
 
-        internal void NotifyCollision(PhysicalBody physicalBody)
+        internal void NotifyCollision(PhysicsComponent physicalBody)
         {
             ICollisionListener collisionListener = Self.GetAIComponent();
             if (null != collisionListener)

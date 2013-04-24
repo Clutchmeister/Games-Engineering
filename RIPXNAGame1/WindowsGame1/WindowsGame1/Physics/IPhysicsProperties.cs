@@ -7,10 +7,6 @@ namespace RIPXNAGame.Physics
     {
         float Mass { set; get; }
 
-
-        IPhysicsProperties SetCollisionRadius(float pCollisionRadius);
-
-
         IPhysicsProperties SetBlockable(bool pIsBlockable);
 
         IPhysicsProperties SetMovable(bool pIsMovable);

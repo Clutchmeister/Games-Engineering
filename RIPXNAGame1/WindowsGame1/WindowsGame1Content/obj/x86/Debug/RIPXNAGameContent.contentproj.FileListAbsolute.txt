@@ -1,0 +1,6 @@
+A:\Downloads\Games-Engineering-Woooo\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1Content\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\Games-Engineering-Woooo\RIPXNAGame1\WindowsGame1\WindowsGame1Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\patm1_11\Desktop\work\RIPXNAGame1\WindowsGame1\WindowsGame1Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\John\Desktop\Uni\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1Content\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1Content\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Programming Work\RIPXNAGame1\WindowsGame1\WindowsGame1Content\obj\x86\Debug\ResolveAssemblyReference.cache

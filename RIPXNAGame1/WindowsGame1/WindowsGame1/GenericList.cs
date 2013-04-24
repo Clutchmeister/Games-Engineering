@@ -5,8 +5,8 @@ using System.Text;
 
 namespace RIPXNAGame
 {
-    public interface IComponentContainer
+    public class GenericList<T>
     {
-
+        void Add(T input) { }
     }
 }

@@ -19,7 +19,7 @@ namespace RIPXNAGame
         {
             mSceneBoundingBox = new BoundingBox(new Vector3(-pWidth / 2, -pHeight / 2, -pDepth / 2), new Vector3(pWidth / 2, pHeight / 2, pDepth / 2));
             mRepresentations = new Dictionary<string, ISceneListener>();
-
+            mObjectList = new List<GameObject>();
         }
 
         public void AddSceneListener(string pIdentifier, ISceneListener pSceneRepresentation)
